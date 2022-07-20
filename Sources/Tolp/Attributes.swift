@@ -27,7 +27,7 @@ struct AttributeEnum<T: RawRepresentable> {
     }
 }
 
-/// has predefined values in an enum
+/// has Swift standard type values other than string
 struct AttributeStringInit<T: HaveInitOptional> {
     let attribute: SwiftSoup.Attribute
     var key: String { attribute.getKey() }
