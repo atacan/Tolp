@@ -183,14 +183,10 @@ public class Converter {
         }
     }
     
-    public func convert(html: String) -> String {
-        do {
-            let doc: SwiftSoup.Document = try SwiftSoup.parse(html)
-            let root = doc.child(0)
-            let decoded = decode(element: root)
-            return decoded
-        } catch {
-            return error.localizedDescription
-        }
+    public func convert(html: String) throws -> String {
+        let doc: SwiftSoup.Document = try SwiftSoup.parse(html)
+        let root = doc.child(0)
+        let decoded = decode(element: root)
+        return decoded
     }
 }
