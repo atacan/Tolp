@@ -10,6 +10,6 @@ final class HTMLTests: XCTestCase {
     func testPageLanguage() {
         let html = #"<!DOCTYPE html><html lang="en"></html>"#
         let plot = #"HTML(.lang(.english))"#
-        assertEqualHTMLContent(html: html, swift: plot)
+        XCTAssertNoThrow(try assertEqualHTMLContent(html: html, swift: plot))
     }
 }
